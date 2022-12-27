@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title  %}
+ 
+            {% endblock %} 
+        </title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <header>
+            <div id="logotipo">  
+                <img src="{% static 'imagenes/logo.png' %}" />              
+                <h1>UC4 - Untels</h1>
+            </div>
+        </header>
+     
+        <nav>
+            <ul>
+                <li>
+                    <a href="/cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="/crearcursos">Crear Cursos</a>
+                </li>
+                <li>
+                    <a href="/carreras">Carrera</a>
+                </li>
+                <li>
+                    <a href="/crearcarreras"> Crear Carreras</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="barra">
+            <span class="esquina-izquierda"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-derecha"></span>
+        </div>
+
+        <div id="content">
+            <div class="box">
+                
+                {% block content %}
+                    <strong> Contenido en layout (Padre) </strong>
+                {% endblock %}
+            </div>
+        </div>
+        <footer>
+            UNTELS - Lenguaje de Programación III &copy; Grupo 4
+        </footer>
+    </body>
+    
+</html>
